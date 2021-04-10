@@ -1,0 +1,33 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    
+    background-color: rgb(0, 26, 51);
+    color: rgb(255, 181, 70);
+}
+
+.container{
+    display: grid;
+    width: 100vw;
+    height: 80vh;
+
+}
+
+.weatherstuff {
+    width: 500px;
+    height: 700px;
+
+    margin:20px;
+    padding:20px;
+
+    background-color: rgb(0, 39, 110);
+    border: 2px solid rgb(59, 0, 0);
+
+    display: grid;
+
+    align-items: center;
+    justify-items: center;
+
+    align-self: center;
+    justify-self: center;
+}
