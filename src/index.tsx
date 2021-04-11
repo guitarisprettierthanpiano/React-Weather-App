@@ -7,6 +7,3 @@ ReactDOM.render(
     <App />,
     document.querySelector('#root')
 )
-
-//ddg search for city
-//weather for city
