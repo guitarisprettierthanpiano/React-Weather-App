@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
 
+import CloudImage from './components/img-cloudimage'
+import WeatherDesc from './components/h4-weather'
+import Location from './components/h2-location'
+import Temperature from './components/h1-temperature'
+
 const apiUrl = 'https://api.openweathermap.org/data/2.5';
 const apiKey = '67f50ab879a2ecdd402f6df384384d61';
 
@@ -8,7 +13,7 @@ function App() {
   //eventually get rid of this var and just put into fetch
   const [inputValue, setInputValue] = useState('');
   const [temperature, setTemperature] = useState();
-  const [country, setCountry] = useState();
+  const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const [description, setDescription] = useState('')
   const [bGC, setBGC] = useState('thistle')
@@ -42,21 +47,20 @@ function App() {
     }
   }
 
-
   function changeBGC(id){
 
     //these numbers are from https://openweathermap.org/weather-conditions
     switch (true) {
       case ((id => 200) && (300 > id)):
-        setBGC('darkgrey'); //thunderstorm
+        setBGC('rgb(252, 193, 0)'); //thunderstorm
         break;
   
       case ((id => 300) && (400 > id)) :
-        setBGC('lightblue'); //drizzle
+        setBGC('rgb(0, 29, 126)'); //drizzle
         break;
   
       case ((id => 500) && (600 > id)):
-        setBGC('darkblue'); //rain
+        setBGC('rgb(0, 29, 126)'); //rain
         break;
   
       case ((id => 600) && (700 > id)):
@@ -64,21 +68,21 @@ function App() {
         break;
   
       case ((id => 700) && (800 > id)):
-        setBGC('gray'); //atmosphere
+        setBGC('rgb(224, 224, 224)'); //atmosphere
         break;
       
       case (id === 800):
-        setBGC('skyblue'); //clear
+        setBGC('rgb(130, 220, 255)'); //clear
         break;
   
       default:
-        setBGC('skyblue') //clouds
+        setBGC('rgb(197, 239, 255)') //clouds
     }
   }
 
   return(
     <div className='container'>
-      <div className='weatherstuff' 
+      <div className='weather-container' 
            style={{backgroundColor: (bGC)}}>
 
         <input className="search-bar"
@@ -89,24 +93,18 @@ function App() {
               onKeyPress={search}
         />
 
-        <h2>
-          {city}
-          {country}
-        </h2>
-        
-        <h1 id = 'temperature'
-            style={{display:'none'}}>
-            {Math.round(temperature)}
-            °F
-        </h1>
+        <Location 
+          myCity = {city}
+          myCountry={country}/>
+          
+        <Temperature 
+          roundedTemp={Math.round(temperature)}/>
 
-        <img 
-          src={iconImage}
-        />
+        <CloudImage 
+          image={iconImage}/>
 
-        <h3>
-          {description}
-        </h3>
+        <WeatherDesc 
+          weather_description={description}/>
 
       </div>
     </div>
