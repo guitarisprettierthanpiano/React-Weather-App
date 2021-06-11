@@ -17,7 +17,9 @@ body {
 .weather-container *{
     text-transform: uppercase;
     font-size: 24px;
-    text-shadow: 1px 2px rgb(50, 50, 70);
+    text-shadow: 
+                2px 2px rgb(20, 20, 20, .8),
+                1px 1px rgb(20, 20, 20, 1);
 
     margin: 0;
     padding: 0;
@@ -31,11 +33,11 @@ body {
     
 }
 .weather-container {
-    width: 275px;
+    width: 300px;
     height: auto;
 
     border: 2px double rgba(0, 0, 0, 0.685);
-    border-radius: 4px;
+    border-radius: 8px;
     padding: 10px;
 
     display: grid;
@@ -54,50 +56,60 @@ body {
 
 /*the input box*/
 .weather-container input{
-    width: 250px;
+    width: 270px;
     height: 30px;
     grid-row: 1;
+
+    margin-top: 20px;
 
     text-transform: none;
     font-size: 18px;
     text-justify: center;
 
-    border-radius: 8px;
+    border-radius: 4px;
     
     text-shadow: 0px 0px rgba(0, 0, 0, 0.5);
     color: black;
+
+    border: none;
     
 
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1),
-                0 3px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1),
+                0 3px 3px rgba(0,0,0,0.1);
 
 }
 
 /*this container is for a background behind the location and temperature*/
 #location-temp-background{
     grid-row: 2;
-    width: 250px;
+    max-width: 300px;
 
     display: grid;
 
     padding: 12px 24px;
 
-    background-color: rgba(0, 0, 0, 0.1);
+    /*background-color: rgba(0, 0, 0, 0.1);
 
 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2),
+                0 1px 1px rgba(0,0,0,0.2); */
 
-    border-radius: 8px;
+    border-radius: 4px;
 }
 #location{
     height: 30px;
+    max-width: 300px;
+    
 
     align-self: end;
     justify-self: center;
 }
+#location-temp-background h2{
+    max-width: 300px;
+}
 #temperature{
     font-size: 54px;
+    max-width: 300px;
     align-self: center;
     justify-self: center;
 }
@@ -120,11 +132,11 @@ body {
     padding: 4px;
     grid-row: 4;
 
-    border-radius: 8px;
+    border-radius: 4px;
 
-    font-size: 20px;
+    font-size: 24px;
 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2),
-                0 2px 4px rgba(0,0,0,0.4);
-    background-color: rgba(0, 0, 0, 0.1);
+    /*box-shadow: 0 1px 1px rgba(0,0,0,0.1),
+                0 1px 1px rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1); */
 }
