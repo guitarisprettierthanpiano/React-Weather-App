@@ -79,12 +79,12 @@ function App() {
         setInputColor('white');
         break;
       case (id === 800):
-        setBGC('rgb(130, 220, 255)'); //clear
+        setBGC('rgb(33, 129, 255)'); //clear
         setColor('rgb(250, 255, 225)');
         setInputColor('rgb(250, 255, 225)');
         break;
       default:
-        setBGC('rgb(197, 239, 255)') //clouds
+        setBGC('rgb(33, 129, 255)') //clouds
         setColor('white');
         setInputColor('white');
     }
