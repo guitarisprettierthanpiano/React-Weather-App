@@ -3,11 +3,12 @@ body {
     margin: 0px;
     padding: 0px;
     
-    background: linear-gradient(
+   /* background: linear-gradient(
         135deg
-        ,#00a3e0 0%,#88c7eb 100%);
+        ,#00a3e0 0%,#88c7eb 100%);*/
     color: rgb(219, 51, 0);
 
+    background-color: lightblue;
     font-family: 'montseratt', sans-serif;
 }
 .container{

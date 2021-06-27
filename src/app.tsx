@@ -50,43 +50,52 @@ function App() {
   const [bGC, setBGC] = useState('rgb(255, 253, 240)');
   const [color, setColor] = useState('orange');
   const [inputColor, setInputColor] = useState('white');
+  
   function changeBGC(id) {
     //these numbers are from https://openweathermap.org/weather-conditions
+    const body = document.querySelector('body');
     switch (true) {
       case ((id > 200) && (300 > id)):
         setBGC('rgb(252, 193, 0)'); //thunderstorm
         setColor('yellow');
         setInputColor('yellow');
+        body.setAttribute('backgroundColor','darkblue')
         break;
       case ((id > 300) && (400 > id)) :
         setBGC('rgb(0, 29, 96)'); //drizzle
         setColor('rgb(205, 205, 205)');
         setInputColor('rgb(205, 205, 205)');
+        body.setAttribute('backgroundColor','blue')
         break;
       case ((id > 500) && (600 > id)):
         setBGC('rgb(0, 29, 120)'); //rain
         setColor('rgb(205, 205, 205)');
         setInputColor('rgb(205, 205, 205)');
+        body.setAttribute('backgroundColor','darkblue')
         break;
       case ((id > 600) && (700 > id)):
         setBGC('white'); //snow
         setColor('grey');
         setInputColor('grey');
+        body.setAttribute('backgroundColor','grey')
         break;
       case ((id > 700) && (800 > id)):
         setBGC('rgb(200, 200, 200)'); //atmosphere
         setColor('white');
         setInputColor('white');
+        body.setAttribute('backgroundColor','grey')
         break;
       case (id === 800):
         setBGC('rgb(33, 129, 255)'); //clear
         setColor('rgb(250, 255, 225)');
         setInputColor('rgb(250, 255, 225)');
+        body.setAttribute('backgroundColor','lightblue')
         break;
       default:
         setBGC('rgb(33, 129, 255)') //clouds
         setColor('white');
         setInputColor('white');
+        body.setAttribute('backgroundColor','lightblue')
     }
   }
 
