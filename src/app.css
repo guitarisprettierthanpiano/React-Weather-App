@@ -62,6 +62,7 @@ body {
     width: 270px;
     height: 30px;
     grid-row: 1;
+    text-indent: 10px;
 
     margin-top: 20px;
 
@@ -75,11 +76,23 @@ body {
     color: black;
 
     border: none;
+    background-color: white;
+    z-index: 3;
     
 
     box-shadow: 0 3px 3px rgba(0,0,0,0.1),
                 0 3px 3px rgba(0,0,0,0.1);
 
+}
+input:focus{
+    outline: none;
+    border: none;
+    height: 125%;
+    width: 101%;
+
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1),
+                0 3px 3px rgba(0,0,0,0.1),
+                0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /*this container is for a background behind the location and temperature*/
