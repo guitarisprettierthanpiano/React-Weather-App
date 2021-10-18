@@ -29,7 +29,7 @@ body {
     
     box-sizing: border-box;
 
-    transition: 0.3s ease;
+    transition: 0.4s ease;
 
     
     font-family: 'montseratt', sans-serif;
@@ -154,4 +154,12 @@ input:focus{
     /*box-shadow: 0 1px 1px rgba(0,0,0,0.1),
                 0 1px 1px rgba(0,0,0,0.1);
     background-color: rgba(0, 0, 0, 0.1); */
+}
+@media screen and (max-width: 768px) {
+    .weather-container{
+        width: 100vw;
+        height: 100vh;
+        padding-top: 20vh;
+        padding-bottom: 20vh;
+    }
 }
